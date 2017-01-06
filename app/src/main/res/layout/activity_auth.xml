@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+    >
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/auth_login_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/et_auth_login_input"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:background="@color/colorLoginField"
+        android:textSize="24sp"
+        android:hint="@string/prompt_login"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+
+
+        />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/auth_password_text_input_layout"
+        android:layout_below="@id/auth_login_text_input_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/et_auth_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:background="@color/colorLoginField"
+        android:textSize="24sp"
+        android:hint="@string/prompt_password"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+
+
+        />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/auth_anchor"
+        android:layout_below="@id/auth_password_text_input_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="24dp"/>
+
+    <Button
+        android:id="@+id/btn_auth_sign_in_button"
+        android:layout_below="@id/auth_password_text_input_layout"
+        android:layout_toLeftOf="@id/auth_anchor"
+        android:layout_margin="16dp"
+        android:layout_width="124dp"
+        android:layout_height="64dp"
+        android:text="@string/sign_in"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btn_auth_sign_up_button"
+        android:layout_below="@id/auth_password_text_input_layout"
+        android:layout_toRightOf="@id/auth_anchor"
+        android:layout_margin="16dp"
+        android:layout_width="124dp"
+        android:layout_height="64dp"
+        android:text="@string/sign_up"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textAllCaps="false"
+        />
+
+
+</RelativeLayout>
