@@ -8,19 +8,21 @@
     <android.support.design.widget.TextInputLayout
         android:id="@+id/auth_login_text_input_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorLoginField"
+        android:layout_margin="8dp"
+
+        >
 
 
     <EditText
         android:id="@+id/et_auth_login_input"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        android:background="@color/colorLoginField"
-        android:textSize="24sp"
+        android:layout_height="40dp"
+        android:textSize="16sp"
         android:hint="@string/prompt_login"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-
+        android:inputType="textEmailAddress"
 
         />
 
@@ -32,17 +34,20 @@
         android:layout_below="@id/auth_login_text_input_layout"
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorLoginField"
+        android:layout_margin="8dp"
+
+        >
 
     <EditText
         android:id="@+id/et_auth_password_input"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_margin="16dp"
-        android:background="@color/colorLoginField"
-        android:textSize="24sp"
+        android:layout_height="40dp"
+        android:textSize="16sp"
         android:hint="@string/prompt_password"
         android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:inputType="textPassword"
 
 
         />
@@ -54,17 +59,17 @@
         android:layout_below="@id/auth_password_text_input_layout"
         android:layout_centerHorizontal="true"
         android:layout_width="0dp"
-        android:layout_height="24dp"/>
+        android:layout_height="16dp"/>
 
     <Button
         android:id="@+id/btn_auth_sign_in_button"
         android:layout_below="@id/auth_password_text_input_layout"
         android:layout_toLeftOf="@id/auth_anchor"
-        android:layout_margin="16dp"
-        android:layout_width="124dp"
-        android:layout_height="64dp"
+        android:layout_margin="8dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:text="@string/sign_in"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:gravity="center"
         android:textAllCaps="false"
         />
@@ -73,11 +78,11 @@
         android:id="@+id/btn_auth_sign_up_button"
         android:layout_below="@id/auth_password_text_input_layout"
         android:layout_toRightOf="@id/auth_anchor"
-        android:layout_margin="16dp"
-        android:layout_width="124dp"
-        android:layout_height="64dp"
+        android:layout_margin="8dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:text="@string/sign_up"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:gravity="center"
         android:textAllCaps="false"
         />
