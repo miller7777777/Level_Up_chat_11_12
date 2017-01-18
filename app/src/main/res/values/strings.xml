@@ -22,5 +22,9 @@
     <string name="sign_up">Sign up</string>
     <string name="register">Register</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="auth_error">Error</string>
+    <string name="auth_ok">OK</string>
+    <string name="register_error">Error</string>
+    <string name="register_ok">OK</string>
 
 </resources>
