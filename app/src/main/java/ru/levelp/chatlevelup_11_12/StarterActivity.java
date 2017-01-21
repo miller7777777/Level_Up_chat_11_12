@@ -11,6 +11,7 @@ public class StarterActivity extends AppCompatActivity {
 
     private Button authActivityButton;
     private Button registerActivityButton;
+    private Button lifeCycleActivityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class StarterActivity extends AppCompatActivity {
 
         authActivityButton = (Button) findViewById(R.id.start_auth_button);
         registerActivityButton = (Button) findViewById(R.id.start_register_button);
+        lifeCycleActivityButton = (Button) findViewById(R.id.start_life_cycle_activity_button);
 
         authActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,14 @@ public class StarterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(StarterActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
+        lifeCycleActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(StarterActivity.this, LifeCycleActivity.class);
                 startActivity(i);
             }
         });
