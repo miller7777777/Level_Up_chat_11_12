@@ -22,12 +22,7 @@ public class TestActivity extends AppCompatActivity{
 
         testButton = (Button) findViewById(R.id.test_button);
         testText = (TextView) findViewById(R.id.test_text);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onTestButtonClicked();
-            }
-        });
+        testButton.setOnClickListener(view -> onTestButtonClicked());
     }
 
     private void onTestButtonClicked() {

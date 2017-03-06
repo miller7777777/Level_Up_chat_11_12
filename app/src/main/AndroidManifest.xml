@@ -25,18 +25,23 @@
         <activity android:name=".LifeCycleActivity">
         </activity>
         <activity android:name=".UserProfileActivity">
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ListExampleActivity">
+
+        </activity>
+        <activity android:name=".ChatListActivity">
+        </activity>
+        <activity android:name=".ProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
     </application>
 
