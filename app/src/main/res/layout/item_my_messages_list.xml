@@ -3,7 +3,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="horizontal"
-              android:padding="16dp">
+              android:padding="4dp"
+              >
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
@@ -16,11 +17,11 @@
         android:layout_weight="0.75"
         android:background="@drawable/rounded_my_message"
         android:padding="10dp"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:autoLink="web"
         android:linksClickable="true"
         android:minLines = "1"
         android:maxLines = "100"
-        android:hint="hbxgduywhdyuwygdygwygywgdwdvw wvd  wvdywvd gwvw gwvgwv gwvg gwvgv gwv hwywywww"/>
+        android:text="hbxgduywhdyuwygdygwygywgdwdvw wvd  wvdywvd gwvw gwvgwv gwvg gwvgv gwv hwywywww"/>
 
 </LinearLayout>

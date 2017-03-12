@@ -13,34 +13,27 @@
         app:title="@string/app_name">
     </android.support.v7.widget.Toolbar>
 
-    <LinearLayout
-        android:id="@+id/messages_container"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/message_list_recyclerview"
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="440dp"
-        android:orientation="vertical"
-        android:layout_below="@+id/toolbar">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/message_list_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="?attr/actionBarSize">
 
 
-        </android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
-
-    </LinearLayout>
-
-    <View style="@style/Divider"
-          android:layout_marginTop="4dp"
-          android:layout_marginBottom="4dp"
-        android:layout_above="@+id/sendbox_container"/>
+    <!--<View style="@style/Divider"-->
+          <!--android:layout_marginTop="4dp"-->
+          <!--android:layout_marginBottom="4dp"-->
+        <!--android:layout_above="@+id/sendbox_container"/>-->
 
     <LinearLayout
         android:id="@+id/sendbox_container"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="24dp"
         android:orientation="horizontal"
+        android:layout_below="@+id/message_list_recyclerview"
         android:layout_alignParentBottom="true">
 
         <EditText

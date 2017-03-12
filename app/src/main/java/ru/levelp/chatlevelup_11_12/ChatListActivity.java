@@ -3,6 +3,7 @@ package ru.levelp.chatlevelup_11_12;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,7 @@ public class ChatListActivity extends AppCompatActivity {
     private RecyclerView chatListRecyclerView;
     private ChatListAdapter adapter;
     private ArrayList<Chat> chats;
+    FloatingActionButton addChatBtn;
     private OnListItemClickListener clickListener = new OnListItemClickListener() {
         @Override
         public void OnClick(View v, int position) {
@@ -36,6 +38,8 @@ public class ChatListActivity extends AppCompatActivity {
 
         chatListRecyclerView = (RecyclerView) findViewById(R.id.chat_list_recyclerview);
         chatListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        addChatBtn = (FloatingActionButton) findViewById(R.id.fb_add_chat);
+
 
         ArrayList<Chat> chats= new ArrayList<>();
 
@@ -56,6 +60,13 @@ public class ChatListActivity extends AppCompatActivity {
             chats.add(new Chat("Вася", "Август"));
             chats.add(new Chat("Вася", "Иван"));
 
+        addChatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chats.add(new Chat("Вася", "кто-то"));
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         Collections.sort(chats, Chat.compare);
 //        for(Chat chat: chats)

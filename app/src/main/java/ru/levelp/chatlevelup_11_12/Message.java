@@ -45,7 +45,7 @@ public class Message {
     public static final Comparator<Message> compare = new Comparator<Message>() {
         @Override
         public int compare(Message message1, Message message2) {
-            return Long.compare(message2.created, message1.created);
+            return Long.compare(message1.created, message2.created);
         }
     };
 }

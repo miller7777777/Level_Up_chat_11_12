@@ -23,12 +23,9 @@ public class ListExampleActivity extends AppCompatActivity{
 //    private Handler handler = new Handler();
 //    private Boolean visible = false;
 
-    private OnListItemClickListener clickListener = new OnListItemClickListener() {
-        @Override
-        public void OnClick(View v, int position) {
-            Log.d(ListExampleAdapter.class.getSimpleName(), "Clicked pos: " + position);
-            Toast.makeText(ListExampleActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
-        }
+    private OnListItemClickListener clickListener = (v, position) -> {
+        Log.d(ListExampleAdapter.class.getSimpleName(), "Clicked pos: " + position);
+        Toast.makeText(ListExampleActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
     };
 
 

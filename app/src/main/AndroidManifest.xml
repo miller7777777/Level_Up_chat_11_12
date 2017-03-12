@@ -34,6 +34,9 @@
         <activity android:name=".ListExampleActivity">
         </activity>
         <activity android:name=".ChatListActivity">
+
+
+
         </activity>
         <activity android:name=".ProfileActivity">
 
