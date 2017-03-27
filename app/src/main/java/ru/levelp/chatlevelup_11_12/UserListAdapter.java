@@ -2,22 +2,19 @@ package ru.levelp.chatlevelup_11_12;
 
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Adapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ListExampleAdapter extends RecyclerView.Adapter<ListExampleAdapter.ViewHolder> {
+public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHolder> {
 
     private ArrayList<User> users;
     private OnListItemClickListener clickListener;
 
-    public ListExampleAdapter(ArrayList<User> users, OnListItemClickListener clickListener) {
+    public UserListAdapter(ArrayList<User> users, OnListItemClickListener clickListener) {
         this.users = users;
         this.clickListener = clickListener;
     }

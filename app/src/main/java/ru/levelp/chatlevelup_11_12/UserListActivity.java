@@ -2,30 +2,28 @@ package ru.levelp.chatlevelup_11_12;
 
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
-public class ListExampleActivity extends AppCompatActivity{
+public class UserListActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
-    private ListExampleAdapter adapter;
+    private UserListAdapter adapter;
     private ArrayList<User> users;
 //    private Handler handler = new Handler();
 //    private Boolean visible = false;
 
     private OnListItemClickListener clickListener = (v, position) -> {
-        Log.d(ListExampleAdapter.class.getSimpleName(), "Clicked pos: " + position);
-        Toast.makeText(ListExampleActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
+        Log.d(UserListAdapter.class.getSimpleName(), "Clicked pos: " + position);
+        Toast.makeText(UserListActivity.this, "Clicked " + position, Toast.LENGTH_SHORT).show();
     };
 
 
@@ -57,7 +55,7 @@ public class ListExampleActivity extends AppCompatActivity{
 //            users.add(new User("User "));
         }
 
-        adapter = new ListExampleAdapter(users, clickListener);
+        adapter = new UserListAdapter(users, clickListener);
         recyclerView.setAdapter(adapter);
     }
 
