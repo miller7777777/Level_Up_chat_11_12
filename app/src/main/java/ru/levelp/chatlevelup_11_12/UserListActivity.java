@@ -11,13 +11,17 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 public class UserListActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
     private UserListAdapter adapter;
-    private ArrayList<User> users;
+    private List<User> users;
 //    private Handler handler = new Handler();
 //    private Boolean visible = false;
 
@@ -45,57 +49,31 @@ public class UserListActivity extends AppCompatActivity{
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
         getSupportActionBar().setTitle("Title");
 
+        createFakeUsers();
+
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        ArrayList<User> users = new ArrayList<>();
-
-        for (int i = 0; i < 100; i++) {
-            users.add(new User("User " + i, "Description " + 1));
-//            users.add(new User("User "));
-        }
-
         adapter = new UserListAdapter(users, clickListener);
         recyclerView.setAdapter(adapter);
     }
 
-//    public void onListChanged(int position){
-//
-////        adapter.notifyDataSetChanged();
-//        adapter.notifyItemInserted(position);
-//    }
+    private void createFakeUsers() {
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        for (int i = 0; i < 10; i++) {
+            realm.copyToRealmOrUpdate(new User(String.valueOf(i), "User " + i));
+        }
+        realm.commitTransaction();
+        realm.close();
+    }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        visible = true;
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                while (visible){
-//                    users.add(new User("User " + users.size()));
-//                    handler.post(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            onListChanged(users.size() - 1);
-//                        }
-//                    });
-//
-//                    try {
-//                        Thread.sleep(3000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//        }).start();
-//
-//    }
-//
-//    @Override
-//    protected void onStop() {
-//        visible = false;
-//        super.onStop();
-//    }
+    private void performUsers(){
+        Realm realm = Realm.getDefaultInstance();
+
+        RealmResults<User> results = realm.where(User.class).findAll();
+        users = results.subList(0, results.size());
+
+        realm.close();
+    }
+
 }
