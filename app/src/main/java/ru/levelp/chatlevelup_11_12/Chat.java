@@ -9,7 +9,7 @@ public class Chat {
     private String id;
     private String title;
     private String author;
-    private String[] participants;
+    private String participant;
     private String lastMessage;
     private long created;
     private long updated;
@@ -17,7 +17,7 @@ public class Chat {
     public Chat(String author, String participant) {
         this.id = UUID.randomUUID().toString();
         this.author = author;
-        this.participants = new String[]{author, participant};
+        this.participant = participant;
         this.lastMessage = "Xxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxxx";
         this.created = System.currentTimeMillis() - (long) (Math.random() * (1000 * 60 * 60 *24));
         this.updated = created;
@@ -36,8 +36,8 @@ public class Chat {
         return author;
     }
 
-    public String[] getParticipants() {
-        return participants;
+    public String getParticipant() {
+        return participant;
     }
 
     public String getLastMessage() {

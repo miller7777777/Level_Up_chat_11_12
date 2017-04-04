@@ -16,6 +16,8 @@ import java.util.List;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+import static ru.levelp.chatlevelup_11_12.R.id.toolbar;
+
 
 public class UserListActivity extends AppCompatActivity{
 
@@ -24,6 +26,8 @@ public class UserListActivity extends AppCompatActivity{
     private List<User> users;
 //    private Handler handler = new Handler();
 //    private Boolean visible = false;
+    private Realm realm;
+    private Toolbar toolbar;
 
     private OnListItemClickListener clickListener = (v, position) -> {
         Log.d(UserListAdapter.class.getSimpleName(), "Clicked pos: " + position);
@@ -39,8 +43,9 @@ public class UserListActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_example);
+        realm = Realm.getDefaultInstance();
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
 
         setSupportActionBar(toolbar);
@@ -58,22 +63,27 @@ public class UserListActivity extends AppCompatActivity{
     }
 
     private void createFakeUsers() {
-        Realm realm = Realm.getDefaultInstance();
+//        Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         for (int i = 0; i < 10; i++) {
             realm.copyToRealmOrUpdate(new User(String.valueOf(i), "User " + i));
         }
         realm.commitTransaction();
-        realm.close();
+//        realm.close();
     }
 
     private void performUsers(){
-        Realm realm = Realm.getDefaultInstance();
+//        Realm realm = Realm.getDefaultInstance();
 
-        RealmResults<User> results = realm.where(User.class).findAll();
-        users = results.subList(0, results.size());
+        users = realm.where(User.class).findAll();
 
-        realm.close();
+
+//        realm.close();
     }
 
+    @Override
+    protected void onDestroy() {
+        realm.close();
+        super.onDestroy();
+    }
 }
