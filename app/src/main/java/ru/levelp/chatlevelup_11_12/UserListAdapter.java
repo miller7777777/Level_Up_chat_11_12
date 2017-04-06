@@ -36,7 +36,8 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return users.size();
+        return users == null ? 0 : users.size();
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

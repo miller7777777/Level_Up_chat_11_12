@@ -66,7 +66,7 @@ public class UserListActivity extends AppCompatActivity {
 
         ArrayList<User> newUsers = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-//            userDB.copyOrUpdate(new User(String.valueOf(i), "User " + i));
+            userDB.copyOrUpdate(new User(String.valueOf(i), "User " + i));
             newUsers.add(new User(String.valueOf(i), "User " + i));
         }
 
