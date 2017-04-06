@@ -20,6 +20,9 @@ public class User extends RealmObject{
         this.id = id;
     }
 
+
+
+
     public String getName() {
         return name;
     }

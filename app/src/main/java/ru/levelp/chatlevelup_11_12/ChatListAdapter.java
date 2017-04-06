@@ -61,8 +61,8 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
         public void bind(Chat chat) {
 
-            chatAvatar.setText(chat.getParticipants()[1].substring(0, 1));
-            participant.setText(chat.getParticipants()[1]);
+            chatAvatar.setText(chat.getParticipant().substring(0, 1));
+            participant.setText(chat.getParticipant());
             lastMessage.setText(chat.getLastMessage());
             long timeChatUpdated = chat.getUpdated();
             Date date = new Date(timeChatUpdated);
