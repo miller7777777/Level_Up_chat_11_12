@@ -19,7 +19,7 @@ import io.realm.Realm;
 import io.realm.RealmChangeListener;
 import ru.levelp.chatlevelup_11_12.storage.UserDatabase;
 
-import static android.R.attr.visible;
+
 
 
 public class UserListActivity extends AppCompatActivity {
@@ -32,6 +32,7 @@ public class UserListActivity extends AppCompatActivity {
 //    private Realm realm;
     private UserDatabase userDB;
     private Toolbar toolbar;
+    private final String TAG = "UserListActivity";
 
     private OnListItemClickListener clickListener = (v, position) -> {
         Log.d(UserListAdapter.class.getSimpleName(), "Clicked pos: " + position);
@@ -51,8 +52,9 @@ public class UserListActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(v -> onBackPressed());
-        getSupportActionBar().setTitle("Title");
+        getSupportActionBar().setTitle("UserList");
 
         createFakeUsers();
 
@@ -64,13 +66,20 @@ public class UserListActivity extends AppCompatActivity {
 
     private void createFakeUsers() {
 
-        ArrayList<User> newUsers = new ArrayList<>();
+        ArrayList<User> newUsers = new ArrayList<User>();
         for (int i = 0; i < 10; i++) {
             userDB.copyOrUpdate(new User(String.valueOf(i), "User " + i));
             newUsers.add(new User(String.valueOf(i), "User " + i));
+            Log.d(TAG, "Добавили юзера в коллекцию: " + i);
         }
 
         userDB.copyOrUpdate(newUsers);
+        Log.d(TAG, "Передали коллекцию юзеров в БД");
+
+//        Костыль. Юзеры должны выхватываться из БД.
+//        users = newUsers;
+//        users = userDB.getAll();
+        performUsers();
     }
 
     private void performUsers() {

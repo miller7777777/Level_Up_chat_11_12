@@ -2,6 +2,7 @@ package ru.levelp.chatlevelup_11_12;
 
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHolder> {
 
@@ -24,7 +27,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_example, parent, false);
+        Log.d("UserListAdapter", "Отработал ViewHolder onCreateViewHolder");
         return new ViewHolder(v);
+
     }
 
     @Override

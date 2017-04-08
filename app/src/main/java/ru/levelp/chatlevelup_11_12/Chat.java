@@ -4,8 +4,14 @@ package ru.levelp.chatlevelup_11_12;
 import java.util.Comparator;
 import java.util.UUID;
 
-public class Chat {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
+import static android.R.id.primary;
+
+public class Chat extends RealmObject{
+
+    @PrimaryKey
     private String id;
     private String title;
     private String author;
@@ -22,6 +28,9 @@ public class Chat {
         this.created = System.currentTimeMillis() - (long) (Math.random() * (1000 * 60 * 60 *24));
         this.updated = created;
         this.title = participant;
+    }
+
+    public Chat() {
     }
 
     public String getId() {
