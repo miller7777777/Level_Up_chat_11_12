@@ -1,6 +1,8 @@
 package ru.levelp.chatlevelup_11_12;
 
 
+import android.util.Log;
+
 import java.util.Comparator;
 import java.util.UUID;
 
@@ -28,6 +30,7 @@ public class Chat extends RealmObject{
         this.created = System.currentTimeMillis() - (long) (Math.random() * (1000 * 60 * 60 *24));
         this.updated = created;
         this.title = participant;
+        Log.d("Chat", "Создан новый чат с " + participant);
     }
 
     public Chat() {

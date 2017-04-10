@@ -10,14 +10,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHolder>{
 
-    private ArrayList<Chat> chats;
+    private List<Chat> chats;
     private OnListItemClickListener clickListener;
 
 
-    public ChatListAdapter(ArrayList<Chat> chats, OnListItemClickListener clickListener) {
+    public ChatListAdapter(List<Chat> chats, OnListItemClickListener clickListener) {
         this.chats = chats;
         this.clickListener = clickListener;
     }
@@ -38,7 +39,11 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return chats.size();
+        if (chats != null) {
+            return chats.size();
+        } else {
+            return 0;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
