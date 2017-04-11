@@ -9,17 +9,18 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.ViewHolder>{
 
-    private ArrayList<Message> messages;
+    private List<Message> messages;
     private OnListItemClickListener clickListener;
 
 //    private static final int TYPE_MY = 0;
 //    private static final int TYPE_OTHER = 1;
 //    private String selfId;
 
-    public MessageListAdapter(ArrayList<Message> messages, OnListItemClickListener clickListener) {
+    public MessageListAdapter(List<Message> messages, OnListItemClickListener clickListener) {
         this.messages = messages;
         this.clickListener = clickListener;
     }
