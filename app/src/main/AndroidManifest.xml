@@ -33,26 +33,21 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".UserListActivity">
-
-
-
         </activity>
         <activity android:name=".ChatListActivity">
-
-
-
         </activity>
         <activity android:name=".ProfileActivity">
-
         </activity>
         <activity android:name=".MessagesListActivity">
+
+        </activity>
+        <activity android:name=".TabLayoutExampleActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
     </application>
 
