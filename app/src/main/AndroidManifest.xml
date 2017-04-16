@@ -39,21 +39,20 @@
         <activity android:name=".ProfileActivity">
         </activity>
         <activity android:name=".MessagesListActivity">
-
         </activity>
         <activity android:name=".TabLayoutExampleActivity">
 
+        </activity>
+        <activity android:name=".ExampleWithFragmentActivity">
 
         </activity>
-
-        <activity android:name=".ExampleWithFragmentActivity">
+        <activity android:name=".NewUserAndChatActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
     </application>
 

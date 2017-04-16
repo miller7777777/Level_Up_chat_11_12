@@ -35,7 +35,7 @@ public class ChatDatabase {
     }
 
     public List<Chat> getAll(){
-        return realm.copyFromRealm(realm.where(Chat.class).findAllSorted("participant", Sort.DESCENDING));
+        return realm.copyFromRealm(realm.where(Chat.class).findAllSorted("updated", Sort.DESCENDING));
     }
 
     public void close(){

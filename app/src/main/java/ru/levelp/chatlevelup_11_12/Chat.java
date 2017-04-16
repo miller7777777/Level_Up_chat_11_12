@@ -27,7 +27,8 @@ public class Chat extends RealmObject{
         this.author = author;
         this.participant = participant;
         this.lastMessage = "Xxxxxx xxxxxxxxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxxx";
-        this.created = System.currentTimeMillis() - (long) (Math.random() * (1000 * 60 * 60 *24));
+//        this.created = System.currentTimeMillis() - (long) (Math.random() * (1000 * 60 * 60 *24));
+        this.created = System.currentTimeMillis();
         this.updated = created;
         this.title = participant;
         Log.d("Chat", "Создан новый чат с " + participant);
